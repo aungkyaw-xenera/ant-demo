@@ -5,15 +5,20 @@ const { Header:  AntHeader  } = Layout;
 
 const Header = () => {
   return (
-    <AntHeader>
-      <div className={classes.logo} />
-      <Menu theme="dark" mode="horizontal" defaultSelectedKeys={["2"]}>
-        {new Array(5).fill(null).map((_, index) => {
-          const key = index + 1;
-          return <Menu.Item key={key}>{`nav ${key}`}</Menu.Item>;
-        })}
+    <AntHeader className={classes.header}>
+      <div className={classes.logo}>
+        EVO
+      </div>
+      <Menu className={classes.menu} mode="horizontal">
+        <Menu.Item key="1">Home</Menu.Item>
+        <Menu.Item key="2">Tours</Menu.Item>
+        <Menu.Item key="3">Desinations</Menu.Item>
+        <Menu.Item key="4">Packages</Menu.Item>
+        <Menu.Item key="5">Gallery</Menu.Item>
+        <Menu.Item key="6">Contact Us</Menu.Item>
       </Menu>
     </AntHeader>
+ 
   );
 };
 

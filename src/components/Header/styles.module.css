@@ -1,11 +1,41 @@
-#components-layout-demo-top .logo {
-    float: left;
-    width: 120px;
-    height: 31px;
-    margin: 16px 24px 16px 0;
-    background: rgba(255, 255, 255, 0.3);
+.header {
+  background: #ebb320;
+  font-family: Nunito;
+}
+.logo {
+  float: left;
+  margin-top: 10px;
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 41px;
+  margin-right: 19.5%;
+  margin-left: 10%;
+}
+ul {
+  background: #ebb320 !important;
+  color: #ffffff;
+}
+li:hover,
+li:active {
+  top: 0px !important;
+  color: #ffffff !important;
+}
+.menu > li {
+  color: #ffffff;
+  background: #ebb320;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+}
+.ant-row-rtl .logo {
+  float: right;
+  margin: 16px 0 16px 24px;
+}
+@media (max-width: 720px) {
+  .logo {
+    margin-right: 9.5%;
+    margin-left: 5%;
   }
-  .ant-row-rtl #components-layout-demo-top .logo {
-    float: right;
-    margin: 16px 0 16px 24px;
-  }
+}

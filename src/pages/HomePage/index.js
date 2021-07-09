@@ -1,8 +1,8 @@
-import { Layout, Steps } from "antd";
+import { Layout, Steps, Card } from "antd";
 import "swiper/swiper.min.css";
 import "swiper/components/navigation/navigation.min.css";
 import Header from "../../components/Header";
-// import classes from "./styles.module.css";
+import classes from "./styles.module.css";
 import Carousel from "../../components/Carousel";
 
 const { Content, Footer } = Layout;
@@ -13,6 +13,13 @@ const HomePage = () => {
     <Layout className="layout">
       <Header />
       <Carousel />
+      <div className={classes.site_card_border_less_wrapper}>
+        <Card bordered={false} className={classes.card}>
+          <p>Card content</p>
+          <p>Card content</p>
+          <p>Card content</p>
+        </Card>
+      </div>
       <Content style={{ padding: "0 50px", marginTop: "30px" }}>
         <Steps current={1}>
           <Step title="Finished" description="This is a description." />

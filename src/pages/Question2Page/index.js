@@ -1,6 +1,6 @@
 import { HomeOutlined, StarOutlined } from "@ant-design/icons";
+import GoogleMapReact from "google-map-react";
 import {
-  Breadcrumb,
   Layout,
   List,
   Menu,
@@ -82,6 +82,21 @@ const Question2Page = () => {
     }
   };
 
+  const hotelsOnMap = () => {
+    return (
+      <>
+        {hotels.map((hotel) => (
+          <Row lat={hotel.latitude} lng={hotel.longitude} gutter={1} key={hotel.code}>
+            <h2 className={classes.h2} key={hotel.code}>
+              <HomeOutlined />
+              {/* Hotel List */}
+            </h2>
+          </Row>
+        ))}
+      </>
+    );
+  };
+
   useEffect(() => {
     getHotels();
   }, []);
@@ -103,13 +118,7 @@ const Question2Page = () => {
             })}
           </Menu>
         </Header>
-        <Content style={{ padding: "0 50px" }}>
-          <Breadcrumb style={{ margin: "16px 0" }}>
-            <Breadcrumb.Item>Home</Breadcrumb.Item>
-            <Breadcrumb.Item>List</Breadcrumb.Item>
-            <Breadcrumb.Item>App</Breadcrumb.Item>
-          </Breadcrumb>
-
+        <Content style={{ padding: "0 50px", marginTop: "30px" }}>
           <div className={classes.site_layout_content}>
             <Title level={3}>Hotel List</Title>
             <Row gutter={[1, 12]}>
@@ -258,7 +267,18 @@ const Question2Page = () => {
                 </List.Item>
               )}
             />
-            ,
+          </div>
+          <div style={{ height: "100vh", width: "100%" }}>
+            <GoogleMapReact
+              bootstrapURLKeys={{
+                key: "AIzaSyAERs8B21JNmLoTCVHtOKQl8cNslTr_Lwo",
+              }}
+              defaultCenter={{lat: 13.7414,lng: 100.553,}}
+              defaultZoom={11}
+            >
+              {hotelsOnMap()}
+            </GoogleMapReact>
+            <map />
           </div>
         </Content>
         <Footer style={{ textAlign: "center" }}>

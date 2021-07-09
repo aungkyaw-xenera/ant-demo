@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types'
 import { List, Space} from "antd";
 import { HomeOutlined, StarOutlined } from "@ant-design/icons";
 import HotelImage from "../../assets/images/hotel.jpg";
@@ -45,6 +46,14 @@ const HotelsList = (props) => {
       )}
     />
   );
+};
+
+HotelsList.propTypes = {
+  hotels: PropTypes.array
+};
+
+HotelsList.defaultProps = {
+  hotels: []
 };
 
 export default HotelsList;

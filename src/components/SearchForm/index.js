@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { Checkbox, Col, Input, Row, Typography } from "antd";
 
 const { Title } = Typography;
@@ -101,6 +102,12 @@ const SearchForm = (props) => {
       </Row>
     </>
   );
+};
+
+SearchForm.propTypes = {
+  setName: PropTypes.func,
+  onChangeBoardCode: PropTypes.func,
+  onChangeCategoryName: PropTypes.func
 };
 
 export default SearchForm;

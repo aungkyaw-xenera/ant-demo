@@ -1,5 +1,6 @@
 import { HomeOutlined } from "@ant-design/icons";
 import { Row } from "antd";
+import PropTypes from 'prop-types'
 import GoogleMapReact from "google-map-react";
 import classes from "./styles.module.css";
 
@@ -39,6 +40,14 @@ const GoogleMap = (props) => {
       <map />
     </div>
   );
+};
+
+GoogleMap.propTypes = {
+  hotels: PropTypes.array
+};
+
+GoogleMap.defaultProps = {
+  hotels: []
 };
 
 export default GoogleMap;

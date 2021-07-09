@@ -15,6 +15,7 @@ import React, { useEffect, useState } from "react";
 import { fetchHotels } from "../../services/hotelService";
 import HotelImage from "../../assets/images/hotel.jpg";
 import classes from "./styles.module.css";
+import _ from "lodash";
 
 const { Header, Content, Footer } = Layout;
 const { Title } = Typography;
@@ -34,6 +35,13 @@ const Question2Page = () => {
 
   const getHotels = async () => {
     const hotelsData = await fetchHotels();
+    hotelsData.forEach((hotel) => {
+      hotel.rates = _.uniq(
+        _.flatMapDeep(
+          hotel.rooms.map((room) => room.rates.map((rate) => rate.boardName))
+        )
+      );
+    });
     setHotels(hotelsData);
     console.log(hotelsData);
   };
@@ -48,11 +56,7 @@ const Question2Page = () => {
     }
     if (boardCodes.length > 0) {
       updatedHotels = updatedHotels.filter((hotel) =>
-        hotel.rooms.filter((room) =>
-          room.rates.filter((rate) =>
-            boardCodes.includes(rate.boardName)
-          )
-        )
+        boardCodes.some((code) => hotel.rates.includes(code))
       );
     }
     setHotels(updatedHotels);
@@ -83,9 +87,8 @@ const Question2Page = () => {
   }, []);
 
   useEffect(() => {
-    console.log(name, categoryNames);
+    console.log(name, categoryNames, boardCodes);
     filterHotels();
-    name.length === 0 && getHotels();
   }, [name, categoryNames, boardCodes]);
 
   return (
@@ -160,7 +163,7 @@ const Question2Page = () => {
                 <label>Category:</label>
                 <Col>
                   <Checkbox
-                    name="4 STARS"
+                    name="1 STAR"
                     onChange={(e) => onChangeCategoryName(e)}
                   >
                     1 STAR
@@ -227,6 +230,12 @@ const Question2Page = () => {
             <List
               itemLayout="vertical"
               size="large"
+              pagination={{
+                onChange: (page) => {
+                  console.log(page);
+                },
+                pageSize: 3,
+              }}
               dataSource={hotels}
               renderItem={(hotel) => (
                 <List.Item
@@ -245,10 +254,7 @@ const Question2Page = () => {
                     title={<a href="/">{hotel.name}</a>}
                     description={hotel.code}
                   />
-                  {hotel.name}
-                  {
-                      hotel.rooms.map(room => room.rates.map(rate => rate.boardName)).join(", ")
-                  }
+                  {hotel.rates.join(", ")}
                 </List.Item>
               )}
             />

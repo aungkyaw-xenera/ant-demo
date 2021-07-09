@@ -16,6 +16,7 @@
 ul {
   background: #ebb320 !important;
   color: #ffffff;
+  border-bottom: 0px !important;
 }
 li:hover,
 li:active {

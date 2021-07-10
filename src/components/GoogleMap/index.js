@@ -4,6 +4,16 @@ import GoogleMapReact from "google-map-react";
 import PropTypes from "prop-types";
 import classes from "./styles.module.css";
 
+const Maker = (hotel) => {
+  return (
+      <h4 className={classes.h2}>
+        <Tooltip color="gold" title={hotel.name}>
+          <HomeFilled />
+        </Tooltip>
+      </h4>
+  );
+};
+
 const GoogleMap = (props) => {
   const { hotels } = props;
 
@@ -17,13 +27,7 @@ const GoogleMap = (props) => {
         defaultZoom={11}
       >
         {hotels.map((hotel) => (
-          <div lat={hotel.latitude} lng={hotel.longitude} key={hotel.code}>
-            <h4 className={classes.h2} key={hotel.code}>
-              <Tooltip color="gold" title={hotel.name}>
-                <HomeFilled />
-              </Tooltip>
-            </h4>
-          </div>
+          <Maker hotel={hotel} lat={hotel.latitude} lng={hotel.longitude} key={hotel.code} />
         ))}
       </GoogleMapReact>
       <map />

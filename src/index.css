@@ -1,14 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+* {
+  font-family: "Roboto", sans-serif;
+}
 
 body {
   margin: 0;
-  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
+  font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: Nunito, source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: Nunito, source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -43,14 +46,32 @@ code {
   height: 100%;
   object-fit: cover;
 }
-.swiper-button-next, .swiper-button-prev {
-  color: #FFFFFF !important;
+.swiper-button-next,
+.swiper-button-prev {
+  color: #ffffff !important;
 }
 .swiper-button-next {
   margin-right: 12%;
 }
 .swiper-button-prev {
   margin-left: 12%;
+}
+.ant-input::placeholder {
+  color: rgba(240, 173, 0, 0.7) !important;
+  opacity: 1;
+}
+.ant-input {
+  padding-left: 15px !important;
+}
+.ant-input:-ms-input-placeholder {
+  color: rgba(240, 173, 0, 0.7) !important;
+}
+
+.ant-input::-ms-input-placeholder {
+  color: rgba(240, 173, 0, 0.7) !important;
+}
+.ant-input-affix-wrapper:focus, .ant-input-affix-wrapper-focused {
+  box-shadow: none !important;
 }
 @media (max-width: 720px) {
   .swiper-button-next {

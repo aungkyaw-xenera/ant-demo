@@ -3,7 +3,7 @@ import {
   EnvironmentOutlined,
   SendOutlined,
   SettingOutlined,
-  UsergroupAddOutlined,
+  TeamOutlined,
 } from "@ant-design/icons";
 import { Button, Card, Col, Form, Input, Radio, Row } from "antd";
 import { useState } from "react";
@@ -108,7 +108,7 @@ const SearchBooking = () => {
                   className={classes.input}
                   size="large"
                   prefix={
-                    <UsergroupAddOutlined className="site-form-item-icon" />
+                    <TeamOutlined className="site-form-item-icon" />
                   }
                   placeholder="Traveller"
                 />

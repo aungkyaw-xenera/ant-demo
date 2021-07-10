@@ -1,6 +1,4 @@
 import { Layout } from "antd";
-import "swiper/components/navigation/navigation.min.css";
-import "swiper/swiper.min.css";
 import Carousel from "../../components/Carousel";
 import ContentOne from "../../components/ContentOne";
 import Header from "../../components/Header";

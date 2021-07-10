@@ -1,11 +1,17 @@
 import PropTypes from 'prop-types'
+import { useMemo } from 'react';
 import { Checkbox, Col, Input, Row, Typography } from "antd";
+import _ from "lodash"
 
 const { Title } = Typography;
 const { Search } = Input;
 
 const SearchForm = (props) => {
   const { onChangeName, onChangeBoardCode, onChangeCategoryName } = props;
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const onChangeNameDebounce =  useMemo(() => _.debounce(onChangeName, 300), []);
+
   return (
     <>
       <Title level={3}>Hotel List</Title>
@@ -14,7 +20,7 @@ const SearchForm = (props) => {
           <label>Hotel Name:</label>
           <Search
             placeholder="Search (Please use enter key to search)"
-            onChange={(e) => onChangeName(e)}
+            onChange={onChangeNameDebounce}
             enterButton
           />
         </Col>

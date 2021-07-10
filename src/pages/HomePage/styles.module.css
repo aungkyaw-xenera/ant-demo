@@ -1,26 +1,35 @@
-.site_card_border_less_wrapper {
-  width: 72%;
-  height: 215px;
-  padding: 0 30px 0 30px;
-  position: absolute;
-  right: 14%;
-  bottom: 20px;
-  left: 14%;
-  z-index: 11;
-  top: 600px;
+.content {
+  margin: 255px 0 100px;
 }
-.card {
-  border: 1px solid #ebb320;
-  border-radius: 8px;
+
+.row {
+  padding: 0 14%;
 }
-.radio {
-  color: #ebb320;
+
+.title {
+  font-family: Nunito;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 64px;
+  line-height: 87px;
+  color: rgba(0, 0, 0, 0.44);
 }
-.search_form {
-  padding: 20px;
+
+.content {
+  font-family: Roboto Condensed;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 21px;
+  color: rgba(0, 0, 0, 0.5);
 }
-.input {
-  border: none;
-  border-bottom: 1px solid rgba(240, 173, 0, 0.7);
-  color: rgba(240, 173, 0, 0.7);
+
+@media (max-width: 560px) {
+  .content {
+    margin-top: 400px;
+  }
+}
+
+.badge_wrapper {
+  width: 100px;
 }

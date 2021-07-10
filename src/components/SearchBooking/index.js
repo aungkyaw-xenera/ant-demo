@@ -44,7 +44,7 @@ const SearchBooking = () => {
             </Radio.Group>
           </Row>
           <Row gutter={[16, 16]} className={classes.search_form}>
-            <Col sx={{ span: 24 }} sm={{ span: 12 }} lg={{ span: 6 }}>
+            <Col xs={{ span: 24 }} sm={{ span: 12 }} lg={{ span: 6 }}>
               <Form.Item name="from">
                 <Input
                   bordered={true}
@@ -57,7 +57,7 @@ const SearchBooking = () => {
                 />
               </Form.Item>
             </Col>
-            <Col sx={{ span: 24 }} sm={{ span: 12 }} lg={{ span: 6 }}>
+            <Col xs={{ span: 24 }} sm={{ span: 12 }} lg={{ span: 6 }}>
               <Form.Item name="to">
                 <Input
                   bordered={true}
@@ -68,7 +68,7 @@ const SearchBooking = () => {
                 />
               </Form.Item>
             </Col>
-            <Col sx={{ span: 24 }} sm={{ span: 12 }} lg={{ span: 6 }}>
+            <Col xs={{ span: 24 }} sm={{ span: 12 }} lg={{ span: 6 }}>
               <Form.Item name="depart">
                 <Input
                   bordered={true}
@@ -79,7 +79,7 @@ const SearchBooking = () => {
                 />
               </Form.Item>
             </Col>
-            <Col sx={{ span: 24 }} sm={{ span: 12 }} lg={{ span: 6 }}>
+            <Col xs={{ span: 24 }} sm={{ span: 12 }} lg={{ span: 6 }}>
               <Form.Item name="return">
                 <Input
                   bordered={true}
@@ -90,7 +90,7 @@ const SearchBooking = () => {
                 />
               </Form.Item>
             </Col>
-            <Col sx={{ span: 24 }} sm={{ span: 12 }} lg={{ span: 6 }}>
+            <Col xs={{ span: 24 }} sm={{ span: 12 }} lg={{ span: 6 }}>
               <Form.Item name="class">
                 <Input
                   bordered={true}
@@ -101,7 +101,7 @@ const SearchBooking = () => {
                 />
               </Form.Item>
             </Col>
-            <Col sx={{ span: 24 }} sm={{ span: 12 }} lg={{ span: 6 }}>
+            <Col xs={{ span: 24 }} sm={{ span: 12 }} lg={{ span: 6 }}>
               <Form.Item name="traveller">
                 <Input
                   bordered={true}

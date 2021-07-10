@@ -45,6 +45,11 @@ const Question2Page = () => {
     setHotels(updatedHotels);
   };
 
+  const onChangeName = async (e) => {
+    await getHotels();
+    setName(e.target.value);
+  }
+
   const onChangeCategoryName = async (e) => {
     await getHotels();
     if (e.target.checked) {
@@ -83,7 +88,7 @@ const Question2Page = () => {
         <Content style={{ padding: "0 50px", marginTop: "30px" }}>
           <div className={classes.site_layout_content}>
             <SearchForm
-              setName={setName}
+              onChangeName={onChangeName}
               onChangeBoardCode={onChangeBoardCode}
               onChangeCategoryName={onChangeCategoryName}
             />

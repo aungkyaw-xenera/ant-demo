@@ -5,7 +5,7 @@ const { Title } = Typography;
 const { Search } = Input;
 
 const SearchForm = (props) => {
-  const { setName, onChangeBoardCode, onChangeCategoryName } = props;
+  const { onChangeName, onChangeBoardCode, onChangeCategoryName } = props;
   return (
     <>
       <Title level={3}>Hotel List</Title>
@@ -14,8 +14,7 @@ const SearchForm = (props) => {
           <label>Hotel Name:</label>
           <Search
             placeholder="Search (Please use enter key to search)"
-            onSearch={(value) => setName(value)}
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => onChangeName(e)}
             enterButton
           />
         </Col>
@@ -105,7 +104,7 @@ const SearchForm = (props) => {
 };
 
 SearchForm.propTypes = {
-  setName: PropTypes.func,
+  onChangeName: PropTypes.func,
   onChangeBoardCode: PropTypes.func,
   onChangeCategoryName: PropTypes.func
 };
